@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/strartFragment">
+
+    <fragment
+        android:id="@+id/strartFragment"
+        android:name="nur.toza.bullify.ui.start.StrartFragment"
+        android:label="fragment_strart"
+        tools:layout="@layout/fragment_strart" >
+        <action
+            android:id="@+id/action_strartFragment_to_questionFragment"
+            app:destination="@id/questionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionFragment"
+        android:name="nur.toza.bullify.ui.question.QuestionFragment"
+        android:label="fragment_question"
+        tools:layout="@layout/fragment_question" />
+</navigation>
