@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import nur.toza.bullify.R
 import nur.toza.bullify.databinding.FragmentHomeBinding
 import nur.toza.bullify.databinding.FragmentResultBinding
@@ -23,4 +24,14 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.imageView2.setOnClickListener {
+            binding.llMain.visibility = View.GONE
+            binding.flMain.visibility = View.VISIBLE
+            binding.llMyAccunt.setOnClickListener {
+                findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
+            }
+        }
+    }
 }
